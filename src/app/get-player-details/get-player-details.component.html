@@ -1,0 +1,72 @@
+<div>
+  <h1 style="text-align-last: center">Players Details</h1>
+  <button type="button" style="margin-right: 10%; margin-left: 38%">
+    <a routerLink="/register" style="text-decoration: none; color: black"
+      >Add a New player</a
+    >
+  </button>
+  <label>Choose filter</label>
+  <select
+    class="select-option"
+    #mySelect
+    (change)="onOptionsSelected(mySelect.value)"
+  >
+    <option value="none">none</option>
+    <option value="more-runs">More Runs</option>
+    <option value="least-balls">Least-Balls</option>
+    <option value="highest-sixes">Highest Sixes</option>
+    <option value="highest-to-least-runs">Highest To Least Runs</option>
+    <option value="highest-batting-strike">Highest Batting Strike</option>
+  </select>
+
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+  <table style="width: 75%; margin-left: 13%">
+    <tr>
+      <th>Name</th>
+      <th>Runs</th>
+      <th>Balls</th>
+      <th>Fours</th>
+      <th>Sixes</th>
+      <th>Strike Rate</th>
+
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let post of response">
+      <td>{{ post?.name }}</td>
+      <td>{{ post?.runs }}</td>
+      <td>{{ post?.balls }}</td>
+      <td>{{ post?.fours }}</td>
+      <td>{{ post?.sixes }}</td>
+      <td>{{ post?.strike_rate }}</td>
+      <td>
+        <button type="button" style="margin-right: 15px">
+          <a
+            routerLink="/update"
+            [state]="post"
+            [queryParams]="{ id: post._id }"
+            style="text-decoration: none; color: black"
+            >Update</a
+          >
+        </button>
+        <button type="button" (click)="deleteUser(post._id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>

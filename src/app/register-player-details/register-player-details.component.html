@@ -1,0 +1,82 @@
+<html>
+  <div style="text-align-last: right; padding-right: 45%">
+    <h1>Add a New Player</h1>
+
+    <label><b>Name</b></label
+    >&nbsp;&nbsp;&nbsp;&nbsp;
+    <input
+      style="text-align-last: start"
+      type="text"
+      name="name"
+      id="name"
+      #name
+    /><br />
+    <label><b>Runs</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="text"
+      name="runs"
+      id="runs"
+      #runs
+    /><br />
+
+    <label><b>Balls</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="text"
+      name="balls"
+      id="balls"
+      #balls
+    /><br />
+    <label><b>Fours</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="text"
+      name="fours"
+      id="fours"
+      #fours
+    /><br />
+    <label><b>Sixes</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="text"
+      name="sixes"
+      id="sixes"
+      #sixes
+    /><br />
+    <label><b>Strike Rate</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="text"
+      name="strike_rate"
+      id="strike_rate"
+      #strike_rate
+    /><br /><br />
+    <button
+      type="button"
+      style="margin-right: 6%"
+      (click)="
+        Register(
+          name.value,
+          runs.value,
+          balls.value,
+          fours.value,
+          sixes.value,
+          strike_rate.value
+        )
+      "
+    >
+      Register
+    </button>
+    <button type="button" style="margin-right: 15px">
+      <a routerLink="/getDetails" style="text-decoration: none; color: black"
+        >Back</a
+      >
+    </button>
+  </div>
+</html>

@@ -1,0 +1,90 @@
+<html>
+  <form>
+    <div style="text-align-last: right; padding-right: 45%">
+      <h1>Update Player</h1>
+
+      <label><b>Name</b></label
+      >&nbsp;&nbsp;&nbsp;&nbsp;
+      <input
+        style="text-align-last: start"
+        type="text"
+        name="name"
+        id="name"
+        value="{{ data.name }}"
+        #name
+      /><br />
+      <label><b>Runs</b></label
+      >&nbsp;
+      <input
+        style="text-align-last: start"
+        type="text"
+        name="runs"
+        id="runs"
+        value="{{ data.runs }}"
+        #runs
+      /><br />
+
+      <label><b>Balls</b></label
+      >&nbsp;
+      <input
+        style="text-align-last: start"
+        type="text"
+        name="balls"
+        id="balls"
+        value="{{ data.balls }}"
+        #balls
+      /><br />
+      <label><b>Fours</b></label
+      >&nbsp;
+      <input
+        style="text-align-last: start"
+        type="text"
+        name="fours"
+        id="fours"
+        value="{{ data.fours }}"
+        #fours
+      /><br />
+      <label><b>Sixes</b></label
+      >&nbsp;
+      <input
+        style="text-align-last: start"
+        type="text"
+        name="sixes"
+        id="sixes"
+        value="{{ data.sixes }}"
+        #sixes
+      /><br />
+      <label><b>Strike Rate</b></label
+      >&nbsp;
+      <input
+        style="text-align-last: start"
+        type="text"
+        name="strike_rate"
+        id="strike_rate"
+        value="{{ data.strike_rate }}"
+        #strike_rate
+      /><br /><br />
+      <button
+        type="submit"
+        style="margin-right: 6%"
+        (click)="
+          Update(
+            name.value,
+            runs.value,
+            balls.value,
+            fours.value,
+            sixes.value,
+            strike_rate.value
+          )
+        "
+      >
+        Update
+      </button>
+      <button type="button" style="margin-right: 15px">
+        <a routerLink="/getDetails" style="text-decoration: none; color: black"
+          >Back</a
+        >
+      </button>
+    </div>
+  </form>
+</html>
